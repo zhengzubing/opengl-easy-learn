@@ -9,7 +9,7 @@
    - `glEGLImageTargetTexture2DOES`: 直接使用现有的 EGLImage 作为纹理数据源
 
 2. **性能优势**:
-   - 避免数据拷贝
+   - 避免数据拷贝(当 eglCreateImageKHR 实现真正的免拷贝时，其本质是通过 内存共享 而非硬件拷贝实现的)
    - 支持跨进程/跨API图像共享
    - 适合视频纹理等频繁更新的场景
 
